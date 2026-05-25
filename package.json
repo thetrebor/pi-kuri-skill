@@ -1,0 +1,12 @@
+{
+  "name": "pi-kuri-skill",
+  "version": "1.0.0",
+  "description": "Pi skill for Kuri browser automation — navigate, screenshot, interact, extract",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/kuri.js health"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
