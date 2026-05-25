@@ -21,8 +21,8 @@ Two-phase progressive disclosure:
 Clone into a pi skill location:
 
 ```bash
-git clone https://github.com/thetrebor/pi-kuri-skill.git ~/.pi/agent/skills/pi-kuri-skill
-cd ~/.pi/agent/skills/pi-kuri-skill
+git clone https://github.com/thetrebor/pi-kuri-skill.git ~/.pi/agent/skills/kuri
+cd ~/.pi/agent/skills/kuri
 npm install
 ```
 
@@ -30,8 +30,8 @@ npm install
 
 ```bash
 cd /path/to/your/project
-git clone https://github.com/thetrebor/pi-kuri-skill.git .pi/skills/pi-kuri-skill
-cd .pi/skills/pi-kuri-skill
+git clone https://github.com/thetrebor/pi-kuri-skill.git .pi/skills/kuri
+cd .pi/skills/kuri
 npm install
 ```
 
