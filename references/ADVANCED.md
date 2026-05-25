@@ -11,22 +11,22 @@ scroll, JavaScript evaluation, cookies, security audits, or tab management.
 All advanced operations use the `action` subcommand:
 
 ```bash
-node scripts/kuri.js action <operation> [params...]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action <operation> [params...]
 ```
 
 Parameters can be passed positionally or as `key=value` pairs:
 
 ```bash
 # Positional
-node scripts/kuri.js action click e3
-node scripts/kuri.js action type e3 hello
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click e3
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type e3 hello
 
 # Key=value
-node scripts/kuri.js action click ref=e3
-node scripts/kuri.js action type ref=e3 value=hello tab_id=MYTABID
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type ref=e3 value=hello tab_id=MYTABID
 
 # Combined
-node scripts/kuri.js action click ref=e3 tab_id=MYTABID
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3 tab_id=MYTABID
 ```
 
 ---
@@ -36,20 +36,20 @@ node scripts/kuri.js action click ref=e3 tab_id=MYTABID
 ### Click Element
 
 ```bash
-node scripts/kuri.js action click <ref> [tab_id]
-node scripts/kuri.js action click ref=e3 tab_id=MYTABID
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click <ref> [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3 tab_id=MYTABID
 ```
 
 ### Right-click
 
 ```bash
-node scripts/kuri.js action click ref=e3 button=right
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3 button=right
 ```
 
 ### Double-click
 
 ```bash
-node scripts/kuri.js action click ref=e3 clickCount=2
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3 clickCount=2
 ```
 
 ### Hover
@@ -67,8 +67,8 @@ snapshot to detect hover-triggered elements.
 Types text into an input field, replacing existing content:
 
 ```bash
-node scripts/kuri.js action type <ref> <text> [tab_id]
-node scripts/kuri.js action type ref=e3 value="hello world"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type <ref> <text> [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type ref=e3 value="hello world"
 ```
 
 ### Fill Input
@@ -76,8 +76,8 @@ node scripts/kuri.js action type ref=e3 value="hello world"
 Fills an input value (similar to type but may clear first):
 
 ```bash
-node scripts/kuri.js action fill <ref> <value> [tab_id]
-node scripts/kuri.js action fill ref=e3 value="user@example.com"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action fill <ref> <value> [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action fill ref=e3 value="user@example.com"
 ```
 
 ### Select Dropdown
@@ -85,8 +85,8 @@ node scripts/kuri.js action fill ref=e3 value="user@example.com"
 Select an option in a dropdown/select element:
 
 ```bash
-node scripts/kuri.js action select <ref> <value> [tab_id]
-node scripts/kuri.js action select ref=e3 value="option-value"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action select <ref> <value> [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action select ref=e3 value="option-value"
 ```
 
 ### Key Press
@@ -94,7 +94,7 @@ node scripts/kuri.js action select ref=e3 value="option-value"
 Press a specific keyboard key:
 
 ```bash
-node scripts/kuri.js action evaluate ref=e3 expression="document.activeElement.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'}))"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate ref=e3 expression="document.activeElement.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'}))"
 ```
 
 ---
@@ -104,25 +104,25 @@ node scripts/kuri.js action evaluate ref=e3 expression="document.activeElement.d
 ### Browser Back
 
 ```bash
-node scripts/kuri.js action back [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action back [tab_id]
 ```
 
 ### Browser Forward
 
 ```bash
-node scripts/kuri.js action forward [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action forward [tab_id]
 ```
 
 ### Reload Page
 
 ```bash
-node scripts/kuri.js action reload [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action reload [tab_id]
 ```
 
 ### Close Tab
 
 ```bash
-node scripts/kuri.js action close-tab <tab_id>
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action close-tab <tab_id>
 ```
 
 ---
@@ -131,18 +131,18 @@ node scripts/kuri.js action close-tab <tab_id>
 
 ```bash
 # Scroll down (default, ~5 units)
-node scripts/kuri.js action scroll [tab_id]
-node scripts/kuri.js action scroll direction=down [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll direction=down [tab_id]
 
 # Scroll up
-node scripts/kuri.js action scroll direction=up amount=10 [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll direction=up amount=10 [tab_id]
 
 # Scroll left/right
-node scripts/kuri.js action scroll direction=left amount=3 [tab_id]
-node scripts/kuri.js action scroll direction=right [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll direction=left amount=3 [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll direction=right [tab_id]
 
 # Scroll to specific pixel position
-node scripts/kuri.js action scroll direction=down amount=500 [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action scroll direction=down amount=500 [tab_id]
 ```
 
 ---
@@ -152,11 +152,11 @@ node scripts/kuri.js action scroll direction=down amount=500 [tab_id]
 Execute arbitrary JavaScript in the page context and get the result:
 
 ```bash
-node scripts/kuri.js action evaluate <expression> [tab_id]
-node scripts/kuri.js action evaluate expression="document.title"
-node scripts/kuri.js action evaluate expression="document.querySelector('h1').textContent"
-node scripts/kuri.js action evaluate expression="JSON.stringify(window.__INITIAL_STATE__)"
-node scripts/kuri.js action evaluate expression="document.body.scrollHeight"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate <expression> [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="document.title"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="document.querySelector('h1').textContent"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="JSON.stringify(window.__INITIAL_STATE__)"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="document.body.scrollHeight"
 ```
 
 Returns the evaluated result (string, number, boolean, or JSON).
@@ -168,7 +168,7 @@ Returns the evaluated result (string, number, boolean, or JSON).
 List all cookies for the current page with security flags:
 
 ```bash
-node scripts/kuri.js action cookies [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action cookies [tab_id]
 ```
 
 Output includes: name, value, domain, path, secure, httpOnly, sameSite, expires.
@@ -180,7 +180,7 @@ Output includes: name, value, domain, path, secure, httpOnly, sameSite, expires.
 Run a full security audit on the current page:
 
 ```bash
-node scripts/kuri.js action audit [tab_id]
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action audit [tab_id]
 ```
 
 Checks:
@@ -207,8 +207,8 @@ you don't need to pass `tab_id` — Kuri tracks the current tab per session.
 
 ```bash
 export KURI_SESSION="my-session"
-node scripts/kuri.js tab-new https://example.com   # Creates tab in session
-node scripts/kuri.js navigate https://other.com     # Uses session's current tab
+node ~/.pi/agent/skills/kuri/scripts/kuri.js tab-new https://example.com   # Creates tab in session
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate https://other.com     # Uses session's current tab
 ```
 
 ### Override Tab ID
@@ -216,8 +216,8 @@ node scripts/kuri.js navigate https://other.com     # Uses session's current tab
 When you need to target a specific tab:
 
 ```bash
-node scripts/kuri.js navigate <url> <tab_id>
-node scripts/kuri.js action click ref=e3 tab_id=TABID123
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate <url> <tab_id>
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3 tab_id=TABID123
 ```
 
 ---
@@ -292,47 +292,47 @@ node scripts/kuri.js action click ref=e3 tab_id=TABID123
 ### Pattern 1: Quick Screenshot Verification
 
 ```bash
-node scripts/kuri.js navigate https://example.com/page
-node scripts/kuri.js page-info                          # Verify loaded
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate https://example.com/page
+node ~/.pi/agent/skills/kuri/scripts/kuri.js page-info                          # Verify loaded
 export KURI_OUTPUT=/tmp/evidence.png
-node scripts/kuri.js screenshot                         # Visual proof
+node ~/.pi/agent/skills/kuri/scripts/kuri.js screenshot                         # Visual proof
 ```
 
 ### Pattern 2: Fill Form and Submit
 
 ```bash
-node scripts/kuri.js navigate https://example.com/login
-node scripts/kuri.js snap                               # Get refs
-node scripts/kuri.js action type ref=e0 value="user@example.com"
-node scripts/kuri.js action type ref=e1 value="password123"
-node scripts/kuri.js action click ref=e2                # Submit button
-node scripts/kuri.js page-info                          # Check result
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate https://example.com/login
+node ~/.pi/agent/skills/kuri/scripts/kuri.js snap                               # Get refs
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type ref=e0 value="user@example.com"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type ref=e1 value="password123"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e2                # Submit button
+node ~/.pi/agent/skills/kuri/scripts/kuri.js page-info                          # Check result
 ```
 
 ### Pattern 3: Extract Dynamic Content
 
 ```bash
-node scripts/kuri.js navigate https://example.com/app
-node scripts/kuri.js action evaluate expression="JSON.stringify(window.__DATA__)"
-node scripts/kuri.js text                               # Also get rendered text
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate https://example.com/app
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="JSON.stringify(window.__DATA__)"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js text                               # Also get rendered text
 ```
 
 ### Pattern 4: Multi-step Interaction Loop
 
 ```bash
 # 1. Open page
-node scripts/kuri.js navigate https://example.com/search
+node ~/.pi/agent/skills/kuri/scripts/kuri.js navigate https://example.com/search
 # 2. Get snapshot for refs
-node scripts/kuri.js snap
+node ~/.pi/agent/skills/kuri/scripts/kuri.js snap
 # 3. Search
-node scripts/kuri.js action type ref=e0 value="query"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action type ref=e0 value="query"
 # 4. Wait for results (evaluate to check)
-node scripts/kuri.js action evaluate expression="document.querySelectorAll('.result').length"
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action evaluate expression="document.querySelectorAll('.result').length"
 # 5. Re-snap after DOM change
-node scripts/kuri.js snap
+node ~/.pi/agent/skills/kuri/scripts/kuri.js snap
 # 6. Click a result
-node scripts/kuri.js action click ref=e3
+node ~/.pi/agent/skills/kuri/scripts/kuri.js action click ref=e3
 # 7. Verify
-node scripts/kuri.js page-info
-node scripts/kuri.js screenshot
+node ~/.pi/agent/skills/kuri/scripts/kuri.js page-info
+node ~/.pi/agent/skills/kuri/scripts/kuri.js screenshot
 ```
